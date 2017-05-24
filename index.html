@@ -2,15 +2,28 @@
 <html>
     <head>
         <!-- meta data -->
-        <title>Hardest Button</title>
+        <title>Hardest Button</title>        
         
-        <!-- include jquery and boostrap -->
+        <!-- external resources: jquery and bootstrap -->
         <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-        <script
-        src='https://code.jquery.com/jquery-3.2.1.min.js'
-        integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
-        crossorigin='anonymous'></script>
-        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+        
+        <!-- temporary placeholder: CSS-->
+        <style>
+            .jumbotron {
+                text-align: center; 
+            }
+            
+            .form-group, input[type='submit'] {
+                width: 50%; 
+                margin-left: 25%; 
+            }
+            
+            input[type='submit'] {
+                margin-top: 50px; 
+                height: 70px; 
+                position: relative; 
+            }
+        </style>
     </head>
     
     <body>
@@ -65,7 +78,50 @@
                 <span class="custom-control-description">C++</span><br>
             </div>
             
-            <input type="submit" class="btn btn-primary" value="Submit Button">
+            <input type="submit" class="btn btn-primary" id="magicButton" value="SUBMIT">
         </form>
+        
+        
+        <!-- temporary placeholder: JavaScript-->
+        <script
+        src='https://code.jquery.com/jquery-3.2.1.min.js'
+        integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
+        crossorigin='anonymous'></script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+        <script
+        src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+        integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+        crossorigin="anonymous"></script>
+        
+        <script>
+            //formula source: https://paulund.co.uk/how-to-work-out-distance-between-mouse-and-element
+            
+            var mX, mY, distance;
+            var $element = $('#magicButton'); 
+ 
+            $(document).mousemove(function(e) {
+                
+                options = {};                
+
+                distance = calculateDistance($element, e.pageX, e.pageY);            
+                var animate_options = ['left', 'right', 'top', 'bottom']; 
+                var option = animate_options[Math.floor(Math.random()*animate_options.length)]; 
+        
+                animate_distance = (1000 - distance)/50; 
+                animate_argument = '+=' + animate_distance.toString(); 
+                options[option] = animate_argument; 
+                
+                $element.animate(options, 10);                 
+            });
+            
+            
+            function calculateDistance(elem, mouseX, mouseY) {
+                return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
+            }
+            
+            $element.click(function() {
+                alert("Congratulations, your application has been submitted!"); 
+            })
+        </script>
     </body>
 </html>
