@@ -6,122 +6,69 @@
         
         <!-- external resources: jquery and bootstrap -->
         <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-        
-        <!-- temporary placeholder: CSS-->
-        <style>
-            .jumbotron {
-                text-align: center; 
-            }
-            
-            .form-group, input[type='submit'] {
-                width: 50%; 
-                margin-left: 25%; 
-            }
-            
-            input[type='submit'] {
-                margin-top: 50px; 
-                height: 70px; 
-                position: relative; 
-            }
-        </style>
-    </head>
-    
-    <body>
-        <div class='jumbotron'>
-            <h1>Panjiva Job Application</h1>
-        </div>
-        
-        <form>
-            <div class='form-group'>
-                <label for='nameInput'>Name</label>
-                <input type='text' id='nameInput' class='form-control' placeholder='Sean Misra'>
-            </div>
-            <div class='form-group'>
-                <label for='emailInput'>Email</label>
-                <input type='email' id='emailInput' class='form-control' placeholder='misra.s@husky.neu.edu'>
-            </div>
-            <div class='form-group'>
-                <label for='jobInput'>Job Title</label>
-                <input type='text' id='jobInput' class='form-control' value='Software Engineer Intern - Full Stack (Summer 2017)' readonly>
-            </div>
-            <div class='form-group'>
-                <label class="custom-control custom-checkbox">Languages you Know</label>
-                <br>
-                <input type="checkbox" class="custom-control-input" checked="checked">
-                <span class="custom-control-description">Java</span><br>
-                
-                <input type="checkbox" class="custom-control-input" checked="checked">
-                <span class="custom-control-description">HTML</span><br>
-                
-                <input type="checkbox" class="custom-control-input" checked="checked">
-                <span class="custom-control-description">CSS</span><br>
-                
-                <input type="checkbox" class="custom-control-input" checked="checked"> 
-                <span class="custom-control-description">JavaScript</span><br>
-                
-                <input type="checkbox" class="custom-control-input" checked="checked">
-                <span class="custom-control-description">PHP</span><br>
-                
-                <input type="checkbox" class="custom-control-input" checked="checked">
-                <span class="custom-control-description">Python</span><br>
-                
-                <input type="checkbox" class="custom-control-input">
-                <span class="custom-control-description">Ruby</span><br>
-                
-                <input type="checkbox" class="custom-control-input" checked="checked">
-                <span class="custom-control-description">SQL</span><br>
-                
-                <input type="checkbox" class="custom-control-input" checked="checked">
-                <span class="custom-control-description">C</span><br>
-                
-                <input type="checkbox" class="custom-control-input" checked="checked">
-                <span class="custom-control-description">C++</span><br>
-            </div>
-            
-            <input type="submit" class="btn btn-primary" id="magicButton" value="SUBMIT">
-        </form>
-        
-        
-        <!-- temporary placeholder: JavaScript-->
         <script
         src='https://code.jquery.com/jquery-3.2.1.min.js'
         integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
         crossorigin='anonymous'></script>
         <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-        <script
-        src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
-        integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
-        crossorigin="anonymous"></script>
         
-        <script>
-            //formula source: https://paulund.co.uk/how-to-work-out-distance-between-mouse-and-element
-            
-            var mX, mY, distance;
-            var $element = $('#magicButton'); 
- 
-            $(document).mousemove(function(e) {
-                
-                options = {};                
+        <!-- custom CSS -->
+        <link rel='stylesheet' type='text/css' href='style.css'>
+    </head>
+    
+    <body>
+        <header class='jumbotron'>
+            <h1>Panjiva Job Application</h1>
+            <p id='cloverIcon'>🍀</p>
+            <p id='reset'><a href=''>Reset Magic Button</a></p>
+        </header>
+        
+        <main>
+            <!-- no real form-processing for now -->
+            <form>
+                <div class='form-group'>
+                    <label for='nameInput'>Name</label>
+                    <input type='text' id='nameInput' class='form-control' placeholder='Sean Misra'>
+                </div>
+                <div class='form-group'>
+                    <label for='emailInput'>Email</label>
+                    <input type='email' id='emailInput' class='form-control' placeholder='misra.s@husky.neu.edu'>
+                </div>
+                <div class='form-group'>
+                    <label for='jobInput'>Job Title</label>
+                    <input type='text' id='jobInput' class='form-control' value='Software Engineer Intern - Full Stack (Summer 2017)' readonly>
+                </div>
+                <div class='form-group'>
+                    <label>Languages you Know</label><br>
+                    
+                    <input type="checkbox" checked="checked">
+                    <span>Java</span><br>
+                    <input type="checkbox" checked="checked">
+                    <span>HTML</span><br>
+                    <input type="checkbox" checked="checked">
+                    <span>CSS</span><br>
+                    <input type="checkbox" checked="checked">
+                    <span>JavaScript</span><br>
+                    <input type="checkbox" checked="checked">
+                    <span>PHP</span><br>
+                    <input type="checkbox" checked="checked">
+                    <span>Python</span><br>
+                    <input type="checkbox">
+                    <span>Ruby</span><br>
+                    <input type="checkbox" checked="checked">
+                    <span>SQL</span><br>
+                    <input type="checkbox" checked="checked">
+                    <span>C</span><br>
+                    <input type="checkbox" checked="checked">
+                    <span>C++</span><br>
+                </div>
 
-                distance = calculateDistance($element, e.pageX, e.pageY);            
-                var animate_options = ['left', 'right', 'top', 'bottom']; 
-                var option = animate_options[Math.floor(Math.random()*animate_options.length)]; 
+                <!-- the "hardest button to button" -->
+                <input type="submit" class="btn btn-primary" id="magicButton" value="submit">
+            </form>
+        </main>
         
-                animate_distance = (1000 - distance)/50; 
-                animate_argument = '+=' + animate_distance.toString(); 
-                options[option] = animate_argument; 
-                
-                $element.animate(options, 10);                 
-            });
-            
-            
-            function calculateDistance(elem, mouseX, mouseY) {
-                return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
-            }
-            
-            $element.click(function() {
-                alert("Congratulations, your application has been submitted!"); 
-            })
-        </script>
+        <!-- custom javascript -->
+        <script src='script.js'></script>
     </body>
 </html>

@@ -1,0 +1,26 @@
+.jumbotron {
+    text-align: center; 
+}
+
+.form-group {
+    width: 50%; 
+    margin-left: 25%; 
+}
+
+input[type='submit'] {
+    margin-left: 37.5%; 
+    width: 25%; 
+    margin-top: 50px; 
+    height: 70px; 
+    position: fixed; 
+    text-transform: uppercase;
+}
+
+#reset:hover, #cloverIcon:hover {
+    cursor: pointer; 
+    opacity: .8; 
+}
+
+#cloverIcon {
+    font-size: 40px; 
+}
