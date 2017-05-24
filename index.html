@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- meta data -->
+        <title>Hardest Button</title>
+        
+        <!-- include jquery and boostrap -->
+        <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+        <script
+        src='https://code.jquery.com/jquery-3.2.1.min.js'
+        integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
+        crossorigin='anonymous'></script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    </head>
+    
+    <body>
+        <div class='jumbotron'>
+            <h1>Panjiva Job Application</h1>
+        </div>
+        
+        <form>
+            <div class='form-group'>
+                <label for='nameInput'>Name</label>
+                <input type='text' id='nameInput' class='form-control' placeholder='Sean Misra'>
+            </div>
+            <div class='form-group'>
+                <label for='emailInput'>Email</label>
+                <input type='email' id='emailInput' class='form-control' placeholder='misra.s@husky.neu.edu'>
+            </div>
+            <div class='form-group'>
+                <label for='jobInput'>Job Title</label>
+                <input type='text' id='jobInput' class='form-control' value='Software Engineer Intern - Full Stack (Summer 2017)' readonly>
+            </div>
+            <div class='form-group'>
+                <label class="custom-control custom-checkbox">Languages you Know</label>
+                <br>
+                <input type="checkbox" class="custom-control-input" checked="checked">
+                <span class="custom-control-description">Java</span><br>
+                
+                <input type="checkbox" class="custom-control-input" checked="checked">
+                <span class="custom-control-description">HTML</span><br>
+                
+                <input type="checkbox" class="custom-control-input" checked="checked">
+                <span class="custom-control-description">CSS</span><br>
+                
+                <input type="checkbox" class="custom-control-input" checked="checked"> 
+                <span class="custom-control-description">JavaScript</span><br>
+                
+                <input type="checkbox" class="custom-control-input" checked="checked">
+                <span class="custom-control-description">PHP</span><br>
+                
+                <input type="checkbox" class="custom-control-input" checked="checked">
+                <span class="custom-control-description">Python</span><br>
+                
+                <input type="checkbox" class="custom-control-input">
+                <span class="custom-control-description">Ruby</span><br>
+                
+                <input type="checkbox" class="custom-control-input" checked="checked">
+                <span class="custom-control-description">SQL</span><br>
+                
+                <input type="checkbox" class="custom-control-input" checked="checked">
+                <span class="custom-control-description">C</span><br>
+                
+                <input type="checkbox" class="custom-control-input" checked="checked">
+                <span class="custom-control-description">C++</span><br>
+            </div>
+            
+            <input type="submit" class="btn btn-primary" value="Submit Button">
+        </form>
+    </body>
+</html>
