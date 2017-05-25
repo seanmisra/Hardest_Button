@@ -17,10 +17,10 @@ $(document).mousemove(function(e) {
         var direction = animate_options[Math.floor(Math.random()*animate_options.length)]; 
 
         // 50% change direction will be "flipped" 
-        var flip = (Math.floor(Math.random()*2) == 0) ? 1 : 0; 
+        var flip = (Math.floor(Math.random()*2) == 0) ? 1 : -1; 
 
         // the closer your mouse, the further the button will "jump"
-        animate_distance = Math.pow(1.75, (1000 - distance)/100);
+        animate_distance = Math.pow(1.7, (1000 - distance)/100);
         animate_distance = animate_distance * flip; 
 
         // use jQuery animate to animate button
@@ -40,11 +40,16 @@ function calculateDistance(elem, mouseX, mouseY) {
 
 // "reward" if user clicks button
 $element.click(function() {
-    alert("Congratulations, your application has been submitted!"); 
+    alert('Congratulations, your application has been submitted!'); 
 });
 
 
+// 
+$('#cog-icon, #cogDescr').click(function() {
+    $('.checkboxSection').toggle(500); 
+})
+
 // small touch
 $('#cloverIcon').click(function() {
-    alert("April Fool's!");     
+    alert('April Fool\'s!');     
 });

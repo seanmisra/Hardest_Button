@@ -1,5 +1,10 @@
-.jumbotron {
+header {
     text-align: center; 
+    height: 250px; 
+}
+
+h1 {
+    font-size: 35px !important; 
 }
 
 .form-group {
@@ -10,10 +15,30 @@
 input[type='submit'] {
     margin-left: 37.5%; 
     width: 25%; 
-    margin-top: 50px; 
     height: 70px; 
     position: fixed; 
     text-transform: uppercase;
+    margin-top: 50px;
+}
+
+#cog-icon, #cogDescr {
+    font-size: 16px;
+}
+
+#cog-icon:hover, #cogDescr:hover {
+    cursor: pointer; 
+}
+
+.checkboxSection {
+    display: none; 
+}
+
+#tip {
+    font-size: 12px;
+}
+
+#reset {
+    font-size: 20px; 
 }
 
 #reset:hover, #cloverIcon:hover {
@@ -22,5 +47,11 @@ input[type='submit'] {
 }
 
 #cloverIcon {
-    font-size: 40px; 
+    font-size: 25px; 
+}
+
+@media(max-height: 1200px) {
+    .jumbotron {
+        font-size: 10px; 
+    }
 }

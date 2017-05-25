@@ -4,8 +4,9 @@
         <!-- meta data -->
         <title>Hardest Button</title>        
         
-        <!-- external resources: jquery and bootstrap -->
+        <!-- external resources: jquery, bootstrap, font awesome -->
         <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+        <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
         <script
         src='https://code.jquery.com/jquery-3.2.1.min.js'
         integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
@@ -21,6 +22,7 @@
             <h1>Panjiva Job Application</h1>
             <p id='cloverIcon'>🍀</p>
             <p id='reset'><a href=''>Reset Magic Button</a></p>
+            <p id='tip'>(TIP: If you can't see the Submit Button, try resetting it.)</p>
         </header>
         
         <main>
@@ -40,31 +42,35 @@
                 </div>
                 <div class='form-group'>
                     <label>Languages you Know</label><br>
+                    <i class='fa fa-cog' aria-hidden='true' id='cog-icon'></i><span id='cogDescr'> Click to expand/minify</span>
+                    <br><br>
                     
-                    <input type="checkbox" checked="checked">
-                    <span>Java</span><br>
-                    <input type="checkbox" checked="checked">
-                    <span>HTML</span><br>
-                    <input type="checkbox" checked="checked">
-                    <span>CSS</span><br>
-                    <input type="checkbox" checked="checked">
-                    <span>JavaScript</span><br>
-                    <input type="checkbox" checked="checked">
-                    <span>PHP</span><br>
-                    <input type="checkbox" checked="checked">
-                    <span>Python</span><br>
-                    <input type="checkbox">
-                    <span>Ruby</span><br>
-                    <input type="checkbox" checked="checked">
-                    <span>SQL</span><br>
-                    <input type="checkbox" checked="checked">
-                    <span>C</span><br>
-                    <input type="checkbox" checked="checked">
-                    <span>C++</span><br>
+                    <div class = 'checkboxSection'>
+                        <input type='checkbox' checked='checked'>
+                        <span>Java</span><br>
+                        <input type='checkbox' checked='checked'>
+                        <span>HTML</span><br>
+                        <input type='checkbox' checked='checked'>
+                        <span>CSS</span><br>
+                        <input type='checkbox' checked='checked'>
+                        <span>JavaScript</span><br>
+                        <input type='checkbox' checked='checked'>
+                        <span>PHP</span><br>
+                        <input type='checkbox' checked='checked'>
+                        <span>Python</span><br>
+                        <input type='checkbox'>
+                        <span>Ruby</span><br>
+                        <input type='checkbox' checked='checked'>
+                        <span>SQL</span><br>
+                        <input type='checkbox' checked='checked'>
+                        <span>C</span><br>
+                        <input type='checkbox' checked='checked'>
+                        <span>C++</span><br>
+                    </div>
                 </div>
 
                 <!-- the "hardest button to button" -->
-                <input type="submit" class="btn btn-primary" id="magicButton" value="submit">
+                <input type='submit' class='btn btn-primary' id='magicButton' value='submit'>
             </form>
         </main>
         
