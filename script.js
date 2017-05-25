@@ -16,7 +16,7 @@ $(document).mousemove(function(e) {
         var animate_options = ['left', 'bottom']; 
         var direction = animate_options[Math.floor(Math.random()*animate_options.length)]; 
 
-        // 50% change direction will be "flipped" 
+        // 50% chance direction will be "flipped" 
         var flip = (Math.floor(Math.random()*2) == 0) ? 1 : -1; 
 
         // the closer your mouse, the further the button will "jump"
@@ -44,10 +44,11 @@ $element.click(function() {
 });
 
 
-// 
+// toggle language skills
 $('#cog-icon, #cogDescr').click(function() {
     $('.checkboxSection').toggle(500); 
 })
+
 
 // small touch
 $('#cloverIcon').click(function() {
